@@ -1,9 +1,18 @@
 package com.example.producto_categoria.services;
 
-import com.example.producto_categoria.model.Producto;
-
-import java.util.Optional;
+import com.example.producto_categoria.repository.ProductoRepository;
+import org.jspecify.annotations.Nullable;
 
 public class ProductoService {
-    public Optional<Producto> obtenerPorId(Long id)
+    public ProductoService(ProductoRepository productoRepository) {
+
+    }
+
+    public @Nullable Object listar() {
+        return null;
+    }
+
+    public void guardarProducto(ProductoService producto) {
+
+    }
 }
