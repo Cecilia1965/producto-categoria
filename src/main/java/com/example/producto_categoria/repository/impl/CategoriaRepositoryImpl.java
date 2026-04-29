@@ -2,19 +2,23 @@ package com.example.producto_categoria.repository.impl;
 
 import com.example.producto_categoria.model.Categoria;
 import com.example.producto_categoria.model.Producto;
-import com.example.producto_categoria.repository.Categoriarepository;
+import com.example.producto_categoria.repository.CategoriaRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriaRepositoryImpl implements Categoriarepository {
+public abstract class CategoriaRepositoryImpl implements CategoriaRepository {
+    private final List<Categoria> categorias = new ArrayList<>();
+    private Long id;
+
     @Override
     public List<Categoria> findAll() {
-        return List.of();
+        return categorias;
     }
 
     @Override
     public Categoria findById(Long id) {
-        return null;
+        return categorias;
     }
 
     @Override
@@ -23,7 +27,18 @@ public class CategoriaRepositoryImpl implements Categoriarepository {
     }
 
     @Override
+    public Categoria save(Categoria categorias) {
+       categorias.setId(id++);
+       if(categorias.getNombre() == null || categorias.getNombre().isEmpty()){
+           throw new IllegalArgumentException("La categoria no puede estar vacía");
+        }if else{
+
+        }
+    }
+
+    @Override
     public void deleteById(Long id) {
+        categorias.removeIf((c -> c.getId().equals(id));
 
     }
 

@@ -3,14 +3,15 @@ package com.example.producto_categoria.repository;
 import com.example.producto_categoria.model.Producto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductoRepository {
-    List<Producto> findAll();
+    public List<Producto> findAll();
 
-    Producto findById(Long id);
+    public Optional <Producto> findById(Long id);
 
-    Producto save(Producto p);
+    public Producto save(Producto p);
 
-    void deleteById(Long id);
+    public void deleteById(Long id);
 }
 

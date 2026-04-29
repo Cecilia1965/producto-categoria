@@ -1,4 +1,4 @@
-package com.example.producto_categoria.controller;
+package com.example.producto_categoria.controllers;
 import com.example.producto_categoria.model.Categoria;
 import com.example.producto_categoria.services.CategoriaService;
 import org.springframework.stereotype.Controller;
@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class CategoriaController {
 
-    public  CategoriaService categoriaService;
+    private final  CategoriaService categoriaService;
 
     public CategoriaController(CategoriaService categoriaService){
         this.categoriaService = categoriaService;
     }
 
+
     @GetMapping("/categorias")
     public String listar(Model model){
-        model.addAttribute("categorias", categoriaService.listar());
-        return "categoria";
+        model.addAttribute("categorias", categoriaService.listarCategorias());
+        return "categorias";
     }
 
     @PostMapping("/categorias")

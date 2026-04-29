@@ -1,10 +1,31 @@
 package com.example.producto_categoria.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name ="productos")
 public class Producto {
-    long id;
-    String nombre, descripcion;
-    Double precio;
-    Categoria categoria;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name ="nombre_producto", nullable = false, length = 200)
+    private String nombre;
+    @Column(name = "precio", nullable = true)
+    private Double precio;
+    @Column(name ="descripcion",nullable = false, length = 500)
+    private String descripcion;
+    // TODO PENDIENTE
+    private Categoria categoria;
+    @Transient // No detecta el campo como columna
+    private int contador;
+
+    public Producto(long id, String nombre, Double precio, String descripcion, Categoria categoria) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+    }
 
     public long getId() {
         return id;
@@ -37,4 +58,14 @@ public class Producto {
         this.categoria = categoria;
     }
 
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                ", descripcion='" + descripcion + '\'' +
+                ", categoria=" + categoria +
+                '}';
+    }
 }
