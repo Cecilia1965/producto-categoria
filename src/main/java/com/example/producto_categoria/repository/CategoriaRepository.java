@@ -7,7 +7,10 @@ import com.example.producto_categoria.repository.impl.CategoriaRepositoryImpl;
 import java.util.List;
 
 public interface CategoriaRepository {
-    private List<Categoria> categoria;
+    /**
+     *
+     */
+    List<Categoria> categoria;
     private Long id;
     public CategoriaRepositoryImpl implements CategoriaRepository{
 
@@ -23,5 +26,6 @@ public interface CategoriaRepository {
 
     public void deleteById(Long id);
 }
+
 
 

@@ -7,10 +7,7 @@ import com.example.producto_categoria.services.CategoriaService;
 import com.example.producto_categoria.services.ProductoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 @Controller
@@ -39,6 +36,10 @@ public class ProductoController {
             Optional<Categoria>categoria = categoriaService.obtenerPorId(producto.getCategoria().getId);
             if(categoria )
             return "redirect:/productos";
+        }
+        @GetMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable Long id){
+
         }
     }
 

@@ -1,9 +1,12 @@
 package com.example.producto_categoria.model;
 
 import jakarta.persistence.*;
-
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import org.springframework.data.annotation.
 @Entity
 @Table(name ="productos")
+
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +17,10 @@ public class Producto {
     private Double precio;
     @Column(name ="descripcion",nullable = false, length = 500)
     private String descripcion;
-    // TODO PENDIENTE
     private Categoria categoria;
+
+    @ManyToOne
+    @JoinColumn(name ="categoria_id")
     @Transient // No detecta el campo como columna
     private int contador;
 

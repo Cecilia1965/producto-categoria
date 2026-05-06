@@ -21,6 +21,14 @@ public class CategoriaService {
     throw new IllegalArgumentException(("El nombre de la categoría no puede estar vacío"));
     }
 
-    public @Nullable Object listarCategorias() {
+
+
+    public @Nullable Object listarCategoria() {
     }
+
+    public @Nullable Object listarCategorias() {
+        return null;
+    }
+
+
 }

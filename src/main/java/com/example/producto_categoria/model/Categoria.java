@@ -1,7 +1,7 @@
 package com.example.producto_categoria.model;
 
 import jakarta.persistence.*;
-
+import jakarta.persistence.Id;
 import java.util.List;
 
 @Entity
@@ -12,7 +12,8 @@ public class Categoria {
     private long id;
     @Column(name = "nombre_categoria", nullable = false, length = 100)
     private String nombre;
-    // TODO pendiente
+    @OneToMany(mappedBy = "categoria")
+
     private List<Producto> productos;
 
     public Categoria(long id, String nombre) {

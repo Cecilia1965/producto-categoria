@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html xml:th="http://www.thymeleaf.org">lang="en">
 <body>
-
+<h1>Productos</h1>
+    <form action="productos" method="UTF-8">
+    <input>type= text</input>
+        <input type="submit">
+</body>
+<thead>
+<body>
+<form action="/productos"method="post>
+</form>
+</ul>
+<table>
+<thead>
+<th>Nombre</th>
+<th>Precio</th>
+<th>Catecoria</th>
+</thead>
+</table>
+<a href="categoria">Categorias</a>
+</thead>
+<tbody>
+<td th:text="${productos}"></td>
+<td th:text="${p.nombre}"></td>
+<td th:text="${p.precio}"></td>
+<td th:text="${p.catecoria.nombre}"></td>
+<td><a th:href="@{/productos/eliminar/{id}(id=${p.id})}">Eliminar</a></td>
+<a th:href="@{/productos/actualizar/{id}(id=${p.id})}">Modificar</a></td>
+</tr>
 </body>
 </html>

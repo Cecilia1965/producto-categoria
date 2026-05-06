@@ -33,6 +33,6 @@ public class ProductoService {
         // TODO falta el método update en el repositorio
     }
     public void eliminarProducto(Long id){
-        producto
+     public void eliminar(Long id)
     }
 }

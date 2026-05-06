@@ -1,4 +1,4 @@
-package com.example.producto_categoria.repository.impl;
+/**package com.example.producto_categoria.repository.impl;
 
 import com.example.producto_categoria.model.Producto;
 import com.example.producto_categoria.repository.ProductoRepository;
@@ -41,3 +41,4 @@ public class ProductoRepositoryImpl implements ProductoRepository {
 
     }
 }
+ **/
